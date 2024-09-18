@@ -1,5 +1,6 @@
 #ifndef MEMBERMANAGER_H
 #define MEMBERMANAGER_H
+
 #include <QWidget>
 #include <QtSql/QSqlQuery>
 #include <QtSql/QSqlQueryModel>

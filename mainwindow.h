@@ -10,6 +10,7 @@
 #include <QKeyEvent>
 #include "BookManager.h"
 #include "membermanager.h"
+#include "empruntmanager.h"
 
 namespace Ui {
 class MainWindow;
@@ -30,10 +31,13 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_btnEmprunts_clicked();
+
 private:
     Ui::MainWindow *ui;
     std::unique_ptr<Livres> livres = nullptr;
     std::unique_ptr<MemberManager> membermanager = nullptr;
+    std::unique_ptr<EmpruntManager> empruntmanager = nullptr;
 };
 
 #endif // MAINWINDOW_H

@@ -10,22 +10,28 @@ CONFIG += c++17
 
 SOURCES += \
     BookManager.cpp \
+    empruntmanager.cpp \
     main.cpp \
     connexion.cpp \
     mainwindow.cpp \
-    membermanager.cpp
+    membermanager.cpp \
+    reportgenerator.cpp
 
 HEADERS += \
     BookManager.h \
     connexion.h \
+    empruntmanager.h \
     mainwindow.h \
-    membermanager.h
+    membermanager.h \
+    reportgenerator.h
 
 FORMS += \
     BookManager.ui \
     connexion.ui \
+    empruntmanager.ui \
     mainwindow.ui \
-    membermanager.ui
+    membermanager.ui \
+    reportgenerator.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

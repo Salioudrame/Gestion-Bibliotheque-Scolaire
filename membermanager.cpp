@@ -179,5 +179,9 @@ void MemberManager::on_tableMembre_activated(const QModelIndex &index)
 
 MemberManager::~MemberManager()
 {
+    if (myDB.isOpen()) {
+        myDB.close();
+    }
+    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
     delete ui;
 }

@@ -28,3 +28,10 @@ void MainWindow::on_pushButton_3_clicked()
     membermanager->show();
 }
 
+
+void MainWindow::on_btnEmprunts_clicked()
+{
+    empruntmanager = std::make_unique<EmpruntManager>();
+    empruntmanager->show();
+}
+

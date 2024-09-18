@@ -31,8 +31,11 @@ Connexion::Connexion(QWidget *parent)
 
 Connexion::~Connexion()
 {
+    if (myDB.isOpen()) {
+        myDB.close();
+    }
+    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
     delete ui;
-    myDB.close();
 }
 
 void Connexion::on_btnClear_clicked()

@@ -95,6 +95,10 @@ bool Livres::deleteLivre(const int& id)
 
 Livres::~Livres()
 {
+    if (myDB.isOpen()) {
+        myDB.close();
+    }
+    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
     delete ui;
 }
 
