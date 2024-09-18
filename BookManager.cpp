@@ -98,7 +98,6 @@ Livres::~Livres()
     if (myDB.isOpen()) {
         myDB.close();
     }
-    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
     delete ui;
 }
 

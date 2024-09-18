@@ -11,6 +11,7 @@
 #include "BookManager.h"
 #include "membermanager.h"
 #include "empruntmanager.h"
+#include "reportgenerator.h"
 
 namespace Ui {
 class MainWindow;
@@ -33,11 +34,15 @@ private slots:
 
     void on_btnEmprunts_clicked();
 
+    void on_btnReport_clicked();
+
 private:
     Ui::MainWindow *ui;
     std::unique_ptr<Livres> livres = nullptr;
     std::unique_ptr<MemberManager> membermanager = nullptr;
     std::unique_ptr<EmpruntManager> empruntmanager = nullptr;
+    std::unique_ptr<ReportGenerator> reportgenerator = nullptr;
+
 };
 
 #endif // MAINWINDOW_H

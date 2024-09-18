@@ -76,41 +76,17 @@ void EmpruntManager::getAllEmprunts()
     ui->comboBoxIdLivre->setModel(livreModel);
 }
 
-// QSqlQueryModel* EmpruntManager::getMembre(const QString& type, const QString& recherche)
-// {
-//     QSqlQueryModel* model = new QSqlQueryModel;
-//     QSqlQuery query(myDB);
-//     query.prepare("SELECT * FROM Membres WHERE "+type+" = '"+recherche+"'");
-//     qDebug() << "Query prepared:" << query.lastQuery();
-//     if (!query.exec()) {
-//         qDebug() << "Error getting user:" << query.lastError().text();
-//         delete model;
-//         return nullptr;
-//     }
-
-//     model->setQuery(query);
-//     return model;
-// }
 
 EmpruntManager::~EmpruntManager()
 {
     if (myDB.isOpen()) {
         myDB.close();
     }
-    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
     delete ui;
 }
 
-// // void EmpruntManager::on_btnEnregistrer_clicked()
-// // {
-// //     idMembre= ui->label->text();
-// //     dateInscription=ui->labelDate->text();
-// //     createEmprunt(nom, dateInscription);
-// // }
-
 void EmpruntManager::on_btnCharger_clicked()
 {
-    // ui->tableEmprunt->setModel(getAllEmprunts());
     getAllEmprunts();
 }
 void EmpruntManager::on_tableEmprunt_activated(const QModelIndex &index)
@@ -118,7 +94,6 @@ void EmpruntManager::on_tableEmprunt_activated(const QModelIndex &index)
     QString val = ui->tableEmprunt->model()->data(index).toString();
     QSqlQuery query(myDB);
     query.prepare("SELECT * FROM Emprunts WHERE ID='"+val+"' or ID_Membre='"+val+"' or ID_Livre='"+val+"' or Date_emprunt='"+val+"' or Date_retour_prevue='"+val+"' or Date_retour_reelle='"+val+"'");
-    // qDebug() << "Query prepared:" << query.lastQuery();
     if (!query.exec()) {
         qDebug() << "Error getting user:" << query.lastError().text();
 
