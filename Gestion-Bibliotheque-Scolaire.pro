@@ -9,14 +9,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    BookManager.cpp \
     main.cpp \
-    connexion.cpp
+    connexion.cpp \
+    mainwindow.cpp
 
 HEADERS += \
-    connexion.h
+    BookManager.h \
+    connexion.h \
+    mainwindow.h
 
 FORMS += \
-    connexion.ui
+    BookManager.ui \
+    connexion.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

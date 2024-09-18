@@ -7,6 +7,7 @@
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QKeyEvent>
+#include "mainwindow.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -28,9 +29,12 @@ private slots:
 
     void on_btnLogin_clicked();
 
+    void on_btnCancel_clicked();
+
 private:
     Ui::Connexion *ui;
     QSqlDatabase myDB;
+    std::unique_ptr<MainWindow> mw = nullptr;
 
 
 protected:

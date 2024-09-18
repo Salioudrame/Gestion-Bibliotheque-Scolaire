@@ -6,6 +6,8 @@
 Connexion::Connexion(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Connexion)
+    // , mw(nullptr)
+
 {
     // QString dbPath = getDatabasePath();
 
@@ -31,7 +33,6 @@ Connexion::~Connexion()
 {
     delete ui;
     myDB.close();
-
 }
 
 void Connexion::on_btnClear_clicked()
@@ -66,10 +67,14 @@ void Connexion::on_btnLogin_clicked()
         if(qry.next())
         {
             ui->lblResult->setText("[+]Valid Username and password");
-            QString msg = "Nom_utilisateur = " + qry.value(0).toString()+ "\n" +
-                          "Mot_de_passe = " + qry.value(1).toString()+ "\n" +
-                          "Role = " + qry.value(2).toString();
-            QMessageBox::warning(this, "Login was successful", msg);
+            // QString msg = "Nom_utilisateur = " + qry.value(0).toString()+ "\n" +
+            //               "Mot_de_passe = " + qry.value(1).toString()+ "\n" +
+            //               "Role = " + qry.value(2).toString();
+            // QMessageBox::warning(this, "Login was successful", msg);
+            mw = std::make_unique<MainWindow>();
+            mw->show();
+            this->hide();
+
         }else{
             ui->lblResult->setText("[-]Wrong Username or password");
         }
@@ -84,3 +89,9 @@ void Connexion::keyPressEvent(QKeyEvent *event)
         QDialog::keyPressEvent(event);
     }
 }
+
+void Connexion::on_btnCancel_clicked()
+{
+
+}
+
