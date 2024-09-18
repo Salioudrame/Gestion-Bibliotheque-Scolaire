@@ -19,7 +19,6 @@ class Livres : public QWidget
 
 public:
     explicit Livres(QWidget *parent = nullptr);
-    // explicit Livres(QSqlDatabase& db, QWidget *parent = nullptr);
 
     bool createLivre(const QString& titre, const QString& auteur, const QString& genre, const QString& dateAjout);
     bool updateLivre(int id, const QString& titre, const QString& auteur, const QString& genre, const QString& dateAjout);
@@ -27,11 +26,6 @@ public:
     QSqlQueryModel* getAllUsers();
     QSqlQueryModel* getUser(const QString& type, const QString& recherche);
 
-    // bool updateUser(int id, const QString& login, const QString& password);
-    // bool deleteUser(int id);
-    // QSqlQueryModel* getUser(int id);
-    // QSqlQueryModel* getAllUsers();
-    // bool readBy(const QString& login, const QString& password);
     ~Livres();
 
 private slots:

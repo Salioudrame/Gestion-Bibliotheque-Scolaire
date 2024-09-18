@@ -12,17 +12,20 @@ SOURCES += \
     BookManager.cpp \
     main.cpp \
     connexion.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    membermanager.cpp
 
 HEADERS += \
     BookManager.h \
     connexion.h \
-    mainwindow.h
+    mainwindow.h \
+    membermanager.h
 
 FORMS += \
     BookManager.ui \
     connexion.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    membermanager.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

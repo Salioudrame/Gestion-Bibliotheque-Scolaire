@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QKeyEvent>
 #include "BookManager.h"
+#include "membermanager.h"
 
 namespace Ui {
 class MainWindow;
@@ -27,9 +28,12 @@ private slots:
 
     void on_btnLivres_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     std::unique_ptr<Livres> livres = nullptr;
+    std::unique_ptr<MemberManager> membermanager = nullptr;
 };
 
 #endif // MAINWINDOW_H

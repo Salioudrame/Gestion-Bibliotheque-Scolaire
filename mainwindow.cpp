@@ -21,3 +21,10 @@ void MainWindow::on_btnLivres_clicked()
     livres->show();
 }
 
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    membermanager = std::make_unique<MemberManager>();
+    membermanager->show();
+}
+
